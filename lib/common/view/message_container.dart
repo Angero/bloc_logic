@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class OopsContainer extends StatelessWidget {
-  final String comment;
+class MessageContainer extends StatelessWidget {
+  final String message;
   final TextStyle style;
 
-  const OopsContainer(
+  const MessageContainer(
       {Key key,
-      this.comment = 'Oops!',
+      this.message = '',
       this.style = const TextStyle(
         fontSize: 12.0,
         color: Colors.black,
@@ -19,7 +19,7 @@ class OopsContainer extends StatelessWidget {
       child: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Text(this.comment, style: style),
+          child: Text(this.message, style: style),
         ),
       ),
     );

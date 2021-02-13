@@ -3,7 +3,7 @@ part of 'take_bloc.dart';
 @immutable
 abstract class TakeState {}
 
-class InitialTakeState  extends TakeState {}
+class InitialTakeState extends TakeState {}
 
 class WaitingTakeState extends TakeState {}
 

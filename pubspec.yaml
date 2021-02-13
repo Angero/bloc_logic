@@ -1,8 +1,8 @@
 name: bloc_logic
-description: A new flutter plugin project.
-version: 0.0.1
-author:
-homepage:
+description: Bloc Logic plugin.
+version: 0.1.1
+
+homepage: https://smart-phone.app
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -11,7 +11,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  bloc: ^6.1.1
   flutter_bloc: ^6.1.1
+  meta: ^1.2.4
 
 dev_dependencies:
   flutter_test:

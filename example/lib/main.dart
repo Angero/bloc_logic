@@ -1,25 +1,17 @@
+import 'package:bloc_logic_example/examples/check/check_example.dart';
 import 'package:bloc_logic_example/examples/take/take_example.dart';
+import 'package:bloc_logic_example/examples/valid/valid_example.dart';
 import 'package:flutter/material.dart';
-import 'dart:async';
-
-import 'package:flutter/services.dart';
-import 'package:bloc_logic/bloc_logic.dart';
 
 void main() {
-  // runApp(MyApp());
   runApp(MaterialApp(
     home: MainPage(),
     routes: <String, WidgetBuilder>{
       TakeExample.route: (BuildContext context) => TakeExample(),
-      //'/second': (BuildContext context) =>  Second(),
-      //'/third': (BuildContext context) => Third(),
+      ValidExample.route: (BuildContext context) => ValidExample(),
+      CheckExample.route: (BuildContext context) => CheckExample(),
     },
   ));
-}
-
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
 }
 
 class MainPage extends StatelessWidget {
@@ -27,72 +19,54 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Example> list = List();
     list.add(Example('TakeLogic Example', TakeExample.route));
+    list.add(Example('ValidLogic Example', ValidExample.route));
+    list.add(Example('CheckLogic Example', CheckExample.route));
     return Scaffold(
       appBar: AppBar(title: Text('Bloc Logic')),
       body: SafeArea(
-        child: ListView.builder(
-          itemCount: list.length,
-          itemBuilder: (BuildContext context, int index) {
-            return ListTile(title: Text(list.elementAt(index).name), onTap: () {
-              Navigator.of(context).pushNamed(TakeExample.route);
-            },);
-          },
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              SizedBox(height: 20.0),
+              Text(
+                'Bloc Logic Examples',
+                style: TextStyle(
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black),
+              ),
+              SizedBox(height: 20.0),
+              ListView.builder(
+                shrinkWrap: true,
+                itemCount: list.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return RaisedButton(
+                    child: Text(list.elementAt(index).name),
+                    onPressed: () {
+                      Navigator.of(context)
+                          .pushNamed(list.elementAt(index).route);
+                    },
+                  );
+                  return ListTile(
+                    title: Text(list.elementAt(index).name),
+                    onTap: () {
+                      Navigator.of(context).pushNamed(TakeExample.route);
+                    },
+                  );
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 }
-
 
 class Example {
   final String name;
   final String route;
 
   Example(this.name, this.route);
-}
-
-
-////////////////////// todo: remove this?
-class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
-
-  @override
-  void initState() {
-    super.initState();
-    initPlatformState();
-  }
-
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-    String platformVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    try {
-      platformVersion = await BlocLogic.platformVersion;
-    } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
-    }
-
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
-    if (!mounted) return;
-
-    setState(() {
-      _platformVersion = platformVersion;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
-        ),
-        body: Center(
-          child: Text('Running on: $_platformVersion\n'),
-        ),
-      ),
-    );
-  }
 }
