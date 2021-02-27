@@ -11,7 +11,7 @@ class ValidUseCase implements IUseCase<String, String, String> {
         return Result(failure: 'The value must be less then 4.');
       return Result(success: value);
     } catch (e, stacktrace) {
-      print('RA: ${e.toString()} STACKTRACE: ${stacktrace.toString()}');
+      print('BLOC_LOGIC: ${e.toString()} STACKTRACE: ${stacktrace.toString()}');
       return Result(failure: e.toString());
     }
   }

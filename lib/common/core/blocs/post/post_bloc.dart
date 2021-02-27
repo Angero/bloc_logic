@@ -25,7 +25,7 @@ class PostBloc<UseCase extends IFutureUseCase> extends Bloc<PostEvent, PostState
         else
           yield FailurePostState(result.failure);
       } catch (e, stacktrace) {
-        print('RA: ${e.toString()} STACKTRACE: ${stacktrace.toString()}');
+        print('BLOC_LOGIC: ${e.toString()} STACKTRACE: ${stacktrace.toString()}');
         yield FailurePostState(e.toString());
       }
     } else if (event is InitiatePostEvent) {

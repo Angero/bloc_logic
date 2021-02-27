@@ -1,4 +1,5 @@
 import 'package:bloc_logic_example/examples/check/check_example.dart';
+import 'package:bloc_logic_example/examples/radio/radio_example.dart';
 import 'package:bloc_logic_example/examples/take/take_example.dart';
 import 'package:bloc_logic_example/examples/valid/valid_example.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,7 @@ void main() {
       TakeExample.route: (BuildContext context) => TakeExample(),
       ValidExample.route: (BuildContext context) => ValidExample(),
       CheckExample.route: (BuildContext context) => CheckExample(),
+      RadioExample.route: (BuildContext context) => RadioExample(),
     },
   ));
 }
@@ -18,9 +20,10 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Example> list = List();
-    list.add(Example('TakeLogic Example', TakeExample.route));
-    list.add(Example('ValidLogic Example', ValidExample.route));
     list.add(Example('CheckLogic Example', CheckExample.route));
+    list.add(Example('RadioLogic Example', RadioExample.route));
+    list.add(Example('ValidLogic Example', ValidExample.route));
+    list.add(Example('TakeLogic Example', TakeExample.route));
     return Scaffold(
       appBar: AppBar(title: Text('Bloc Logic')),
       body: SafeArea(

@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="13012c05-f960-498b-94c0-9c631b4a094f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +11,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="29594" />
+    <option name="totalTimeSeconds" value="43159" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_7_API_28" />
   <component name="FileEditorManager">
@@ -89,6 +87,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -179,7 +178,84 @@
       <option name="project" value="LOCAL" />
       <updated>1614388806360</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="0.1.2">
+      <created>1614398434065</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1614398434065</updated>
+    </task>
+    <task id="LOCAL-00012" summary="01">
+      <created>1614398666029</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1614398666029</updated>
+    </task>
+    <task id="LOCAL-00013" summary="02">
+      <created>1614400016590</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1614400016590</updated>
+    </task>
+    <task id="LOCAL-00014" summary="03">
+      <created>1614401030064</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1614401030064</updated>
+    </task>
+    <task id="LOCAL-00015" summary="04">
+      <created>1614401815601</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1614401815601</updated>
+    </task>
+    <task id="LOCAL-00016" summary="05">
+      <created>1614404816290</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1614404816290</updated>
+    </task>
+    <task id="LOCAL-00017" summary="06">
+      <created>1614407422044</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1614407422044</updated>
+    </task>
+    <task id="LOCAL-00018" summary="07">
+      <created>1614421025459</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1614421025460</updated>
+    </task>
+    <task id="LOCAL-00019" summary="08">
+      <created>1614421155355</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1614421155355</updated>
+    </task>
+    <task id="LOCAL-00020" summary="09">
+      <created>1614426837941</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1614426837941</updated>
+    </task>
+    <task id="LOCAL-00021" summary="10">
+      <created>1614528280933</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1614528280933</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -213,7 +289,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="0.1.2" />
     <MESSAGE value="01" />
     <MESSAGE value="02" />
     <MESSAGE value="03" />

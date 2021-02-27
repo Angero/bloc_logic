@@ -44,7 +44,19 @@ class _CheckExampleState extends State<CheckExample> {
                     'This example shows how you can turn on or turn off any parameter.'),
                 SizedBox(height: 20.0),
                 _checkLogic.builder(
-                  child: _materialButton,
+                  child: () {
+                    return RaisedButton(
+                      child: Text(_checkLogic.isTurnedOn ? 'Turn on' : 'Turn off'),
+                      color: _checkLogic.isTurnedOn ? Colors.deepOrange : Colors.green,
+                      textColor: Colors.white,
+                      onPressed: () {
+                        if (_checkLogic.isTurnedOn)
+                          _checkLogic.turnOff();
+                        else
+                          _checkLogic.turnOn();
+                      },
+                    );
+                  },
                 ),
               ],
             ),
@@ -55,10 +67,8 @@ class _CheckExampleState extends State<CheckExample> {
   }
 
   MaterialButton _materialButton() {
-    return MaterialButton(
+    return RaisedButton(
       child: Text(_checkLogic.isTurnedOn ? 'Turn on' : 'Turn off'),
-      minWidth: 120.0,
-      height: 50.0,
       color: _checkLogic.isTurnedOn ? Colors.deepOrange : Colors.green,
       textColor: Colors.white,
       onPressed: () {

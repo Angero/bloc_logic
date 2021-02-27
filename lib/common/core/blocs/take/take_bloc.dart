@@ -25,7 +25,7 @@ class TakeBloc<S, V, F> extends Bloc<TakeEvent, TakeState> {
         else
           yield FailureTakeState<F>(result.failure);
       } catch (e, stacktrace) {
-        print('RA: ${e.toString()} STACKTRACE: ${stacktrace.toString()}');
+        print('BLOC_LOGIC: ${e.toString()} STACKTRACE: ${stacktrace.toString()}');
         yield FailureTakeState(e.toString()); //todo:
       }
     } else if (event is InitiateTakeEvent) {

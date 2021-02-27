@@ -22,6 +22,8 @@ class _ValidExampleState extends State<ValidExample> {
 
   @override
   void dispose() {
+    _validLogic.dispose();
+    _validController.dispose();
     super.dispose();
   }
 
