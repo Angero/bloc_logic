@@ -1,3 +1,7 @@
+## 0.2.0
+
+Change builders and listeners for each pattern
+
 ## 0.1.6
 
 Add documentation for take logic.

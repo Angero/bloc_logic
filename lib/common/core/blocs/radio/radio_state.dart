@@ -1,12 +1,12 @@
-part of 'radio_bloc.dart';
+part of 'radio_logic.dart';
 
 @immutable
 abstract class RadioState {}
 
-class SwitchedRadioState<V> extends RadioState {
+class SelectedRadioState<V> extends RadioState {
   final V index;
 
-  SwitchedRadioState(this.index);
+  SelectedRadioState(this.index);
 }
 
 class FailureRadioState<F> extends RadioState {

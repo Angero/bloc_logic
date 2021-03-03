@@ -1,12 +1,12 @@
-part of 'valid_bloc.dart';
+part of 'valid_logic.dart';
 
 @immutable
 abstract class ValidEvent {}
 
 class InitialValidEvent<V> extends ValidEvent {}
 
-class ChangeValidEvent<V> extends ValidEvent {
+class ValidateValidEvent<V> extends ValidEvent {
   final V value;
 
-  ChangeValidEvent(this.value);
+  ValidateValidEvent(this.value);
 }

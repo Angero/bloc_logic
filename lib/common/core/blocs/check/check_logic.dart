@@ -1,17 +1,83 @@
-import 'package:bloc_logic/common/core/blocs/check/check_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+part 'check_bloc.dart';
+part 'check_state.dart';
+part 'check_event.dart';
+
+/// **1. DEFINE LOGIC**
+/// ```dart
+/// CheckLogic _checkLogic;
+/// ```
+///
+/// **2. INITIALIZE LOGIC**
+/// ```dart
+/// _checkLogic = CheckLogic();
+/// ```
+///
+/// **3. DISPOSE**
+/// ```dart
+/// _checkLogic.dispose();
+/// ```
+///
+/// **4. LISTENER**
+///
+/// Available states:
+///
+/// * CheckedState
+/// * UncheckedState
+///
+/// Example:
+///
+/// ```dart
+/// _checkLogic.listener(
+///   (context, state) {
+///     if (state is CheckedState)
+///       print('checked');
+///     else
+///       print('unchecked');
+///    },
+///    child: Container(),
+/// )
+/// ```
+///
+/// **5. BUILDER**
+///
+/// Available states:
+///
+/// * CheckedState
+/// * UncheckedState
+///
+/// Example:
+///
+/// ```dart
+/// _checkLogic.builder(
+///   (context, state) {
+///     if (state is CheckedState)
+///       print('checked');
+///     if (state is UncheckedState)
+///       print('unchecked');
+///     return Container();
+///   }
+/// )
+///```
+///
+/// **6. EVENTS**
+///
+/// * checkEvent()
+/// * uncheckEvent()
+///
+/// Example:
+///
+/// ```dart
+/// _checkLogic.checkEvent();
+/// _checkLogic.uncheckEvent();
+/// ```
+///
 class CheckLogic<S, V, F> {
   CheckBloc _checkBloc;
-  bool _isTurnedOn;
-
-  bool get isTurnedOn => _isTurnedOn;
-
-  CheckBloc get checkBloc => _checkBloc;
 
   CheckLogic() {
-    _isTurnedOn = false;
     _checkBloc = CheckBloc();
   }
 
@@ -19,24 +85,39 @@ class CheckLogic<S, V, F> {
     _checkBloc.close();
   }
 
-  void turnOn() {
-    _isTurnedOn = true;
-    _checkBloc.add(TurnOnCheckEvent());
+  void checkEvent() {
+    _checkBloc.add(CheckCheckEvent());
   }
 
-  void turnOff() {
-    _isTurnedOn = false;
-    _checkBloc.add(TurnOffCheckEvent());
+  void uncheckEvent() {
+    _checkBloc.add(UncheckCheckEvent());
   }
 
-  BlocBuilder builder({
-    Function() child,
-  }) {
+  BlocListener listener(void Function(BuildContext, CheckState) listener,
+      {bool Function(CheckState, CheckState) listenWhen, Widget child}) {
+    return BlocListener<CheckBloc, CheckState>(
+      cubit: _checkBloc,
+      listener: (BuildContext context, CheckState checkState) {
+        listener(context, checkState);
+      },
+      listenWhen: (CheckState beforeCheckState, CheckState afterCheckState) {
+        return listenWhen == null ? null : listenWhen(beforeCheckState, afterCheckState);
+      },
+      child: child,
+    );
+  }
+
+  BlocBuilder builder(Widget Function(BuildContext, CheckState) builder,
+      {bool Function(CheckState, CheckState) buildWhen}) {
     return BlocBuilder<CheckBloc, CheckState>(
-        cubit: _checkBloc,
-        builder: (BuildContext context, CheckState checkState) {
-          _isTurnedOn = checkState is OnCheckState;
-          return child();
-        });
+      cubit: _checkBloc,
+      builder: (BuildContext context, CheckState checkState) {
+        return builder(context, checkState);
+      },
+      buildWhen: (CheckState beforeCheckState, CheckState afterCheckState) {
+        return buildWhen == null ? null : buildWhen(beforeCheckState, afterCheckState);
+      },
+    );
   }
+
 }

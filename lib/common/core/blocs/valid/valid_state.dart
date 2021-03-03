@@ -1,10 +1,10 @@
-part of 'valid_bloc.dart';
+part of 'valid_logic.dart';
 
 @immutable
 abstract class ValidState {}
 
-class ChangedValidState extends ValidState {
+class ValidatedValidState extends ValidState {
   final Result result;
 
-  ChangedValidState({@required this.result});
+  ValidatedValidState({@required this.result});
 }

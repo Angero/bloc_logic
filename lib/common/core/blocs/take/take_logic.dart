@@ -1,88 +1,169 @@
 import 'package:bloc_logic/common/core/blocs/take/take_bloc.dart';
 import 'package:bloc_logic/common/core/usecases/use_case_interface.dart';
-import 'package:bloc_logic/common/view/message_container.dart';
-import 'package:bloc_logic/common/view/waiting_container.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+/// **1. DEFINE LOGIC**
+/// ```dart
+/// TakeLogic _takeLogic;
+/// ```
+///
+/// **2. INITIALIZE LOGIC**
+///
+/// ```dart
+/// _takeLogic = TakeLogic<List<String>, void, String>(
+///     usecase: TakeUseCase(repository: TakeRepository()));
+/// ```
+///
+/// **3. DISPOSE**
+/// ```dart
+/// _takeLogic.dispose();
+/// ```
+///
+/// **4. USE CASE**
+///
+/// ```dart
+/// class TakeUseCase implements IFutureUseCase<List<String>, void, String> {
+///   final ITakeRepository repository;
+///
+///   TakeUseCase({@required this.repository});
+///
+///   @override
+///   Future<Result<List<String>, String>> execute([void value]) async {
+///     try {
+///       List<String> result = await repository.getList();
+///       return Result(success: result);
+///     } catch (e) {
+///       return Result(failure: e.toString());
+///     }
+///   }
+/// }
+/// ```
+///
+/// **5. REPOSITORY**
+///
+/// ```dart
+/// class TakeRepository implements ITakeRepository {
+///   @override
+///   Future<List<String>> getList() async {
+///     await Future.delayed(Duration(milliseconds: 1000));
+///     return ['Onion', 'Potato', 'Carrot'];
+///   }
+/// }
+/// ```
+///
+/// ```dart
+/// abstract class ITakeRepository {
+///   Future<List<String>> getList();
+/// }
+/// ```
+///
+/// **6. LISTENER**
+///
+/// Available states:
+///
+/// * InitialTakeState
+/// * WaitingTakeState
+/// * (S) SuccessTakeState
+/// * (F) FailureTakeState
+///
+/// Example:
+///
+/// ```dart
+/// _takeLogic.listener(
+///       (context, state) {
+///     if (state is InitialTakeState)
+///       print('initial');
+///     if (state is WaitingTakeState)
+///       print('waiting');
+///     if (state is SuccessTakeState)
+///       print(state.success.toString());
+///     if (state is FailureTakeState)
+///       print(state.failure.toString());
+///   },
+///   child: Container(),
+/// )
+/// ```
+///
+/// **7. BUILDER**
+///
+/// Available states:
+///
+/// * InitialTakeState
+/// * WaitingTakeState
+/// * (S) SuccessTakeState
+/// * (F) FailureTakeState
+///
+/// Example:
+///
+/// ```dart
+/// _takeLogic.builder((context, state) {
+///   if (state is InitialTakeState)
+///     return MessageContainer(message: 'Empty');
+///   if (state is WaitingTakeState)
+///     return WaitingContainer();
+///   if (state is SuccessTakeState)
+///     return MessageContainer(message: state.success.toString());
+///   if (state is FailureTakeState)
+///     print(state.failure.toString());
+///   return MessageContainer(message: 'Oops');
+/// })
+///```
+///
+/// **8. EVENTS**
+///
+/// * request()
+///
+/// Example:
+///
+/// ```dart
+/// _takeLogic.request([V]);
+/// ```
+///
 class TakeLogic<S, V, F> {
   TakeBloc<S, V, F> _takeBloc;
 
-  TakeBloc get takeBloc => _takeBloc;
-
   TakeLogic({@required IFutureUseCase<S, V, F> usecase}) {
     _takeBloc = TakeBloc<S, V, F>(usecase: usecase);
-  }
-
-  void request([V value]) {
-    _takeBloc.add(SendTakeEvent(value));
   }
 
   void dispose() {
     _takeBloc.close();
   }
 
-  BlocBuilder builder({
-    Function() initial,
-    Function(SuccessTakeState<S>) success,
-    Function(FailureTakeState<F>) failure,
-    Function() waiting,
-    Function() usual,
-  }) {
-    return BlocBuilder<TakeBloc, TakeState>(
-      cubit: _takeBloc,
-      builder: (BuildContext context, TakeState takeState) {
-        if (takeState is InitialTakeState)
-          return initial == null
-              ? MessageContainer(message: 'Initial')
-              : initial();
-        else if (takeState is SuccessTakeState<S>)
-          return success == null
-              ? MessageContainer(message: 'Success')
-              : success(takeState);
-        else if (takeState is FailureTakeState<F>)
-          return failure == null
-              ? MessageContainer(message: 'Failure')
-              : failure(takeState);
-        else if (takeState is WaitingTakeState)
-          return waiting == null ? WaitingContainer() : waiting();
-        return usual == null ? MessageContainer(message: 'Usual') : usual();
-      },
-    );
+  void request([V value]) {
+    _takeBloc.add(SendTakeEvent(value));
   }
 
-  BlocListener listener({
-    Function() initial,
-    Function(SuccessTakeState<S>) success,
-    Function(FailureTakeState<F>) failure,
-    Function() waiting,
-    Function() unusual,
-    Widget child,
-  }) {
+  BlocListener listener(void Function(BuildContext, TakeState) listener,
+      {bool Function(TakeState, TakeState) listenWhen, Widget child}) {
     return BlocListener<TakeBloc, TakeState>(
       cubit: _takeBloc,
       listener: (BuildContext context, TakeState takeState) {
-        if (takeState is InitialTakeState)
-          return initial == null
-              ? MessageContainer(message: 'Initial')
-              : initial();
-        else if (takeState is SuccessTakeState<S>)
-          return success == null
-              ? MessageContainer(message: 'Success')
-              : success(takeState);
-        else if (takeState is FailureTakeState<F>)
-          return failure == null
-              ? MessageContainer(message: 'Failure')
-              : failure(takeState);
-        else if (takeState is WaitingTakeState)
-          return waiting == null ? WaitingContainer() : waiting();
-        else
-          return unusual == null
-              ? MessageContainer(message: 'Unusual')
-              : unusual();
+        listener(context, takeState);
+      },
+      listenWhen: (TakeState beforeTakeState, TakeState afterTakeState) {
+        return listenWhen == null
+            ? null
+            : listenWhen(beforeTakeState, afterTakeState);
       },
       child: child,
+    );
+  }
+
+  BlocBuilder builder(Widget Function(BuildContext, TakeState) builder,
+      {bool Function(TakeState, TakeState) buildWhen}) {
+    return BlocBuilder<TakeBloc, TakeState>(
+      cubit: _takeBloc,
+      builder: (BuildContext context, TakeState takeState) {
+        return builder(context, takeState);
+      },
+      buildWhen: (TakeState beforeTakeState, TakeState afterTakeState) {
+        return buildWhen == null
+            ? null
+            : buildWhen(beforeTakeState, afterTakeState);
+      },
     );
   }
 }

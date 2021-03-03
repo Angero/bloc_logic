@@ -16,3 +16,4 @@ class ValidUseCase implements IUseCase<String, String, String> {
     }
   }
 }
+

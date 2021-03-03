@@ -1,4 +1,7 @@
+import 'package:bloc_logic/common/core/blocs/take/take_bloc.dart';
 import 'package:bloc_logic/common/core/blocs/take/take_logic.dart';
+import 'package:bloc_logic/common/view/message_container.dart';
+import 'package:bloc_logic/common/view/waiting_container.dart';
 import 'package:bloc_logic_example/examples/take/take_repository.dart';
 import 'package:bloc_logic_example/examples/take/take_use_case.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +31,15 @@ class _TakeExampleState extends State<TakeExample> {
 
   @override
   Widget build(BuildContext context) {
-    return _scaffold();
+    return _takeLogic.listener(
+      (context, state) {
+        if (state is InitialTakeState) print('initial');
+        if (state is WaitingTakeState) print('waiting');
+        if (state is SuccessTakeState) print(state.success.toString());
+        if (state is FailureTakeState) print(state.failure.toString());
+      },
+      child: _scaffold(),
+    );
   }
 
   Scaffold _scaffold() {
@@ -48,9 +59,11 @@ class _TakeExampleState extends State<TakeExample> {
                 _takeLogic.request();
               },
             ),
-            _takeLogic.builder(
-              initial: () => Text('Basket is empty'),
-              success: (state) {
+            _takeLogic.builder((context, state) {
+              if (state is InitialTakeState)
+                return MessageContainer(message: 'Empty');
+              if (state is WaitingTakeState) return WaitingContainer();
+              if (state is SuccessTakeState) {
                 List<String> list = state.success as List;
                 return ListView.separated(
                   shrinkWrap: true,
@@ -62,8 +75,10 @@ class _TakeExampleState extends State<TakeExample> {
                     return Divider(color: Colors.black);
                   },
                 );
-              },
-            ),
+              }
+              if (state is FailureTakeState) print(state.failure.toString());
+              return MessageContainer(message: 'Oops');
+            }),
           ],
         ),
       ),

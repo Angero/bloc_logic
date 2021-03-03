@@ -1,23 +1,15 @@
-import 'dart:async';
-
-import 'package:bloc/bloc.dart';
-import 'package:bloc_logic/common/core/usecases/use_case_interface.dart';
-import 'package:meta/meta.dart';
-
-part 'check_event.dart';
-
-part 'check_state.dart';
+part of 'check_logic.dart';
 
 class CheckBloc extends Bloc<CheckEvent, CheckState> {
 
-  CheckBloc() : super(OffCheckState());
+  CheckBloc() : super(UncheckedCheckState());
 
   @override
   Stream<CheckState> mapEventToState(CheckEvent event) async* {
-    if (event is TurnOnCheckEvent)
-      yield OnCheckState();
-    else if (event is TurnOffCheckEvent) {
-      yield OffCheckState();
+    if (event is CheckCheckEvent)
+      yield CheckedCheckState();
+    else if (event is UncheckCheckEvent) {
+      yield UncheckedCheckState();
     }
   }
 }

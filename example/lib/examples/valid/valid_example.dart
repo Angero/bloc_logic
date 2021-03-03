@@ -1,4 +1,5 @@
 import 'package:bloc_logic/common/core/blocs/valid/valid_logic.dart';
+import 'package:bloc_logic/common/data/result.dart';
 import 'package:bloc_logic_example/examples/valid/valid_use_case.dart';
 import 'package:flutter/material.dart';
 
@@ -29,7 +30,15 @@ class _ValidExampleState extends State<ValidExample> {
 
   @override
   Widget build(BuildContext context) {
-    return _scaffoldWidget();
+    return _validLogic.listener(
+          (context, state) {
+        if (state is ValidatedValidState)
+          print('valided');
+        else
+          print('unvalided');
+      },
+      child: _scaffoldWidget(),
+    );
   }
 
   Widget _scaffoldWidget() {
@@ -43,19 +52,22 @@ class _ValidExampleState extends State<ValidExample> {
           child: Column(
             children: [
               SizedBox(height: 10.0),
-              Text('This example shows how you can control length input string.'),
-              _validLogic.builder(valid: (state) {
-                return TextField(
-                  controller: _validController,
-                  decoration: InputDecoration(
-                    errorText:
-                        state.result.hasFailure() ? state.result.failure : null,
-                  ),
-                  onChanged: (value) {
-                    _validLogic.validate(value);
-                  },
-                );
-              }),
+              Text(
+                  'This example shows how you can control length input string.'),
+              _validLogic.builder(
+                (context, state) {
+                  Result _result = (state as ValidatedValidState).result;
+                  return TextField(
+                    controller: _validController,
+                    decoration: InputDecoration(
+                      errorText: _result.hasFailure() ? _result.failure : null,
+                    ),
+                    onChanged: (value) {
+                      _validLogic.validate(value);
+                    },
+                  );
+                },
+              ),
               SizedBox(height: 10.0),
               RaisedButton(
                 child: Text('Refresh'),

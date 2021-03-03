@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="13012c05-f960-498b-94c0-9c631b4a094f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="43159" />
+    <option name="totalTimeSeconds" value="73937" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_7_API_28" />
   <component name="FileEditorManager">
@@ -46,7 +50,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="247f4ed1aab4118413f7d815f51f044cbe0957aa" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -83,11 +87,11 @@
     <property name="dart.analysis.tool.window.force.activate" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/common/core/blocs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/common/core/blocs/check" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -255,7 +259,91 @@
       <option name="project" value="LOCAL" />
       <updated>1614528280933</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="11">
+      <created>1614744537132</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1614744537132</updated>
+    </task>
+    <task id="LOCAL-00023" summary="12">
+      <created>1614798515593</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1614798515593</updated>
+    </task>
+    <task id="LOCAL-00024" summary="13">
+      <created>1614873929309</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1614873929309</updated>
+    </task>
+    <task id="LOCAL-00025" summary="14">
+      <created>1614926971822</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1614926971822</updated>
+    </task>
+    <task id="LOCAL-00026" summary="15">
+      <created>1614938669443</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1614938669443</updated>
+    </task>
+    <task id="LOCAL-00027" summary="16">
+      <created>1614939024563</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1614939024563</updated>
+    </task>
+    <task id="LOCAL-00028" summary="17">
+      <created>1614939327642</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1614939327642</updated>
+    </task>
+    <task id="LOCAL-00029" summary="18">
+      <created>1614943309322</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1614943309322</updated>
+    </task>
+    <task id="LOCAL-00030" summary="19">
+      <created>1614945143576</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1614945143576</updated>
+    </task>
+    <task id="LOCAL-00031" summary="20">
+      <created>1614945308582</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1614945308582</updated>
+    </task>
+    <task id="LOCAL-00032" summary="21">
+      <created>1614946073248</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1614946073248</updated>
+    </task>
+    <task id="LOCAL-00033" summary="22">
+      <created>1614948430023</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1614948430023</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -270,17 +358,7 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="develop" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
+              <option name="SHOW_DETAILS_IN_CHANGES" value="false" />
             </State>
           </value>
         </entry>
@@ -303,6 +381,18 @@
     <MESSAGE value="08" />
     <MESSAGE value="09" />
     <MESSAGE value="10" />
-    <option name="LAST_COMMIT_MESSAGE" value="10" />
+    <MESSAGE value="11" />
+    <MESSAGE value="12" />
+    <MESSAGE value="13" />
+    <MESSAGE value="14" />
+    <MESSAGE value="15" />
+    <MESSAGE value="16" />
+    <MESSAGE value="17" />
+    <MESSAGE value="18" />
+    <MESSAGE value="19" />
+    <MESSAGE value="20" />
+    <MESSAGE value="21" />
+    <MESSAGE value="22" />
+    <option name="LAST_COMMIT_MESSAGE" value="22" />
   </component>
 </project>

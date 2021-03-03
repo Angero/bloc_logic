@@ -1,8 +1,8 @@
-part of 'check_bloc.dart';
+part of 'check_logic.dart';
 
 @immutable
 abstract class CheckEvent {}
 
-class TurnOnCheckEvent extends CheckEvent {}
+class CheckCheckEvent extends CheckEvent {}
 
-class TurnOffCheckEvent extends CheckEvent {}
+class UncheckCheckEvent extends CheckEvent {}

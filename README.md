@@ -105,20 +105,23 @@ module child. Button widget redraw every times when logic is switched. The logic
 
 ```
 _checkLogic.builder(
-  child: () {
+  (context, state) {
     return RaisedButton(
-      child: Text(_checkLogic.isTurnedOn ? 'Turn on' : 'Turn off'),
-      color: _checkLogic.isTurnedOn ? Colors.deepOrange : Colors.green,
+      child:
+          Text(state is CheckedCheckState ? 'Turn on' : 'Turn off'),
+      color: state is CheckedCheckState
+          ? Colors.deepOrange
+          : Colors.green,
       textColor: Colors.white,
       onPressed: () {
-        if (_checkLogic.isTurnedOn)
-          _checkLogic.turnOff();
+        if (state is CheckedCheckState)
+          _checkLogic.uncheckEvent();
         else
-          _checkLogic.turnOn();
+          _checkLogic.checkEvent();
       },
     );
   },
-)
+),
 ```
 
 ## Radio Logic
@@ -151,19 +154,34 @@ We must wrap every button with builder of radio logic. In practice we do it only
 button we use procedure select with integer index parameter. This parameter means current index in the items list.
 
 ```
-return _radioLogic.builder(child: (currentIndex) {
-  return Center(
-    child: RaisedButton(
-      child: Text(list.elementAt(index)),
-      color: currentIndex == index
-          ? Colors.deepOrange
-          : null,
-      onPressed: () {
-        _radioLogic.select(index);
-      },
-    ),
-  );
-});
+_radioLogic.builder(
+  (context, state) {
+    if (state is SelectedRadioState) {
+      print('selected ' + state.index.toString());
+      return ListView.builder(
+          shrinkWrap: true,
+          itemCount: list.length,
+          itemBuilder: (context, index) {
+            return Center(
+              child: RaisedButton(
+                child: Text(list.elementAt(index)),
+                color: index == state.index
+                    ? Colors.deepOrange
+                    : null,
+                onPressed: () {
+                  _radioLogic.select(index);
+                },
+              ),
+            );
+          });
+    } else {
+      print('failure');
+      return Center(
+        child: Text('Failure'),
+      );
+    }
+  },
+),
 ```
 
 ## Valid Logic
@@ -179,15 +197,15 @@ Don't initialize this logic. We will initialize one a bit later. Also declare pr
 again.
 
 ```
-  ValidLogic _validLogic;
-  TextEditingController _validController;
+ValidLogic _validLogic;
+TextEditingController _validController;
 
-  @override
-  void dispose() {
-    _validLogic.dispose();
-    _validController.dispose();
-    super.dispose();
-  }
+@override
+void dispose() {
+  _validLogic.dispose();
+  _validController.dispose();
+  super.dispose();
+}
 ```
 
 After that we need create new file with name valid_use_case.dart and fill in this file next code:
@@ -239,18 +257,20 @@ And in the end we build widgets and use ValidBloc Builder for it. Procedure Buil
 or failure result. If this result has failure error message appears below text field.
 
 ```
-  _validLogic.builder(valid: (state) {
+_validLogic.builder(
+  (context, state) {
+    Result _result = (state as ValidatedValidState).result;
     return TextField(
       controller: _validController,
       decoration: InputDecoration(
-        errorText:
-            state.result.hasFailure() ? state.result.failure : null,
+        errorText: _result.hasFailure() ? _result.failure : null,
       ),
       onChanged: (value) {
         _validLogic.validate(value);
       },
     );
-  }),
+  },
+),
 ```
 
 ## Take Logic
@@ -343,9 +363,11 @@ Return to the main file and add button with take logic. Call procedure request()
 And now we can create list with helping take logic builder.
 
 ```
-_takeLogic.builder(
-  initial: () => Text('Basket is empty'),
-  success: (state) {
+_takeLogic.builder((context, state) {
+  if (state is InitialTakeState)
+    return MessageContainer(message: 'Empty');
+  if (state is WaitingTakeState) return WaitingContainer();
+  if (state is SuccessTakeState) {
     List<String> list = state.success as List;
     return ListView.separated(
       shrinkWrap: true,
@@ -357,8 +379,10 @@ _takeLogic.builder(
         return Divider(color: Colors.black);
       },
     );
-  },
-),
+  }
+  if (state is FailureTakeState) print(state.failure.toString());
+  return MessageContainer(message: 'Oops');
+}),
 ```
 
 In this example we used only initial and success path of logic. Other two - waiting and failure use default widgets. You

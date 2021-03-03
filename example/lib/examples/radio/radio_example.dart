@@ -25,7 +25,15 @@ class _RadioExampleState extends State<RadioExample> {
 
   @override
   Widget build(BuildContext context) {
-    return _scaffoldWidget();
+    return _radioLogic.listener(
+      (context, state) {
+        if (state is SelectedRadioState)
+          print('selected ' + state.index.toString());
+        else if (state is FailureRadioState)
+          print('failure');
+      },
+      child: _scaffoldWidget(),
+    );
   }
 
   Widget _scaffoldWidget() {
@@ -44,23 +52,32 @@ class _RadioExampleState extends State<RadioExample> {
                 Text(
                     'This example shows how you can choose only one item in the object list.'),
                 SizedBox(height: 20.0),
-                ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: list.length,
-                  itemBuilder: (context, index) {
-                    return _radioLogic.builder(child: (currentIndex) {
+                _radioLogic.builder(
+                  (context, state) {
+                    if (state is SelectedRadioState) {
+                      print('selected ' + state.index.toString());
+                      return ListView.builder(
+                          shrinkWrap: true,
+                          itemCount: list.length,
+                          itemBuilder: (context, index) {
+                            return Center(
+                              child: RaisedButton(
+                                child: Text(list.elementAt(index)),
+                                color: index == state.index
+                                    ? Colors.deepOrange
+                                    : null,
+                                onPressed: () {
+                                  _radioLogic.select(index);
+                                },
+                              ),
+                            );
+                          });
+                    } else {
+                      print('failure');
                       return Center(
-                        child: RaisedButton(
-                          child: Text(list.elementAt(index)),
-                          color: currentIndex == index
-                              ? Colors.deepOrange
-                              : null,
-                          onPressed: () {
-                            _radioLogic.select(index);
-                          },
-                        ),
+                        child: Text('Failure'),
                       );
-                    });
+                    }
                   },
                 ),
               ],

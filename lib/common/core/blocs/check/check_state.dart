@@ -1,8 +1,9 @@
-part of 'check_bloc.dart';
+part of 'check_logic.dart';
 
 @immutable
-abstract class CheckState {}
+abstract class CheckState {
+}
 
-class OnCheckState extends CheckState {}
+class CheckedCheckState extends CheckState {}
 
-class OffCheckState extends CheckState {}
+class UncheckedCheckState extends CheckState {}

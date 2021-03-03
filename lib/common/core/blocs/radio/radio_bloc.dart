@@ -1,20 +1,13 @@
-import 'dart:async';
-
-import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
-
-part 'radio_event.dart';
-
-part 'radio_state.dart';
+part of 'radio_logic.dart';
 
 class RadioBloc<S, V, F> extends Bloc<RadioEvent, RadioState> {
-  RadioBloc() : super(SwitchedRadioState(0));
+  RadioBloc() : super(SelectedRadioState(0));
 
   @override
   Stream<RadioState> mapEventToState(RadioEvent event) async* {
-    if (event is SwitchRadioEvent) {
+    if (event is SelectRadioEvent) {
       try {
-        yield SwitchedRadioState(event.index);
+        yield SelectedRadioState(event.index);
       } catch (e, stacktrace) {
         print(
             'BLOC_LOGIC: ${e.toString()} STACKTRACE: ${stacktrace.toString()}');

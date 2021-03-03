@@ -25,7 +25,15 @@ class _CheckExampleState extends State<CheckExample> {
 
   @override
   Widget build(BuildContext context) {
-    return _scaffoldWidget();
+    return _checkLogic.listener(
+      (context, state) {
+        if (state is CheckedCheckState)
+          print('checked');
+        else
+          print('unchecked');
+      },
+      child: _scaffoldWidget(),
+    );
   }
 
   Widget _scaffoldWidget() {
@@ -44,16 +52,19 @@ class _CheckExampleState extends State<CheckExample> {
                     'This example shows how you can turn on or turn off any parameter.'),
                 SizedBox(height: 20.0),
                 _checkLogic.builder(
-                  child: () {
+                  (context, state) {
                     return RaisedButton(
-                      child: Text(_checkLogic.isTurnedOn ? 'Turn on' : 'Turn off'),
-                      color: _checkLogic.isTurnedOn ? Colors.deepOrange : Colors.green,
+                      child:
+                          Text(state is CheckedCheckState ? 'Turn on' : 'Turn off'),
+                      color: state is CheckedCheckState
+                          ? Colors.deepOrange
+                          : Colors.green,
                       textColor: Colors.white,
                       onPressed: () {
-                        if (_checkLogic.isTurnedOn)
-                          _checkLogic.turnOff();
+                        if (state is CheckedCheckState)
+                          _checkLogic.uncheckEvent();
                         else
-                          _checkLogic.turnOn();
+                          _checkLogic.checkEvent();
                       },
                     );
                   },
@@ -63,20 +74,6 @@ class _CheckExampleState extends State<CheckExample> {
           ),
         ),
       ),
-    );
-  }
-
-  MaterialButton _materialButton() {
-    return RaisedButton(
-      child: Text(_checkLogic.isTurnedOn ? 'Turn on' : 'Turn off'),
-      color: _checkLogic.isTurnedOn ? Colors.deepOrange : Colors.green,
-      textColor: Colors.white,
-      onPressed: () {
-        if (_checkLogic.isTurnedOn)
-          _checkLogic.turnOff();
-        else
-          _checkLogic.turnOn();
-      },
     );
   }
 }
