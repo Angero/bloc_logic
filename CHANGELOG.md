@@ -1,3 +1,7 @@
+## 0.3.0
+
+Null Safety
+
 ## 0.2.0
 
 Change builders and listeners for each pattern

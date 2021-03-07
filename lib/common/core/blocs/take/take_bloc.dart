@@ -1,13 +1,5 @@
-import 'dart:async';
+part of 'take_logic.dart';
 
-import 'package:bloc/bloc.dart';
-import 'package:bloc_logic/common/core/usecases/use_case_interface.dart';
-import 'package:bloc_logic/common/data/result.dart';
-import 'package:meta/meta.dart';
-
-part 'take_event.dart';
-
-part 'take_state.dart';
 
 class TakeBloc<S, V, F> extends Bloc<TakeEvent, TakeState> {
   final IFutureUseCase<S, V, F> usecase;

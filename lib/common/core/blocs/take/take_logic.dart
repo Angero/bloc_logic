@@ -1,8 +1,18 @@
-import 'package:bloc_logic/common/core/blocs/take/take_bloc.dart';
+import 'dart:async';
+
+import 'package:bloc/bloc.dart';
 import 'package:bloc_logic/common/core/usecases/use_case_interface.dart';
+import 'package:bloc_logic/common/data/result.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:meta/meta.dart';
+
+part 'take_bloc.dart';
+
+part 'take_event.dart';
+
+part 'take_state.dart';
 
 /// **1. DEFINE LOGIC**
 /// ```dart
@@ -106,7 +116,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 ///   if (state is SuccessTakeState)
 ///     return MessageContainer(message: state.success.toString());
 ///   if (state is FailureTakeState)
-///     print(state.failure.toString());
+///     return MessageContainer(message: state.failure.toString());
 ///   return MessageContainer(message: 'Oops');
 /// })
 ///```
@@ -139,7 +149,7 @@ class TakeLogic<S, V, F> {
   BlocListener listener(void Function(BuildContext, TakeState) listener,
       {bool Function(TakeState, TakeState) listenWhen, Widget child}) {
     return BlocListener<TakeBloc, TakeState>(
-      cubit: _takeBloc,
+      bloc: _takeBloc,
       listener: (BuildContext context, TakeState takeState) {
         listener(context, takeState);
       },
@@ -155,7 +165,7 @@ class TakeLogic<S, V, F> {
   BlocBuilder builder(Widget Function(BuildContext, TakeState) builder,
       {bool Function(TakeState, TakeState) buildWhen}) {
     return BlocBuilder<TakeBloc, TakeState>(
-      cubit: _takeBloc,
+      bloc: _takeBloc,
       builder: (BuildContext context, TakeState takeState) {
         return builder(context, takeState);
       },

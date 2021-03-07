@@ -96,7 +96,7 @@ class CheckLogic<S, V, F> {
   BlocListener listener(void Function(BuildContext, CheckState) listener,
       {bool Function(CheckState, CheckState) listenWhen, Widget child}) {
     return BlocListener<CheckBloc, CheckState>(
-      cubit: _checkBloc,
+      bloc: _checkBloc,
       listener: (BuildContext context, CheckState checkState) {
         listener(context, checkState);
       },
@@ -110,7 +110,7 @@ class CheckLogic<S, V, F> {
   BlocBuilder builder(Widget Function(BuildContext, CheckState) builder,
       {bool Function(CheckState, CheckState) buildWhen}) {
     return BlocBuilder<CheckBloc, CheckState>(
-      cubit: _checkBloc,
+      bloc: _checkBloc,
       builder: (BuildContext context, CheckState checkState) {
         return builder(context, checkState);
       },

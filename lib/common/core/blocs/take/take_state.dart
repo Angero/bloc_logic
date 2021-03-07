@@ -1,4 +1,4 @@
-part of 'take_bloc.dart';
+part of 'take_logic.dart';
 
 @immutable
 abstract class TakeState {}

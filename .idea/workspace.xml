@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13012c05-f960-498b-94c0-9c631b4a094f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="13012c05-f960-498b-94c0-9c631b4a094f" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="73937" />
+    <option name="totalTimeSeconds" value="76729" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_7_API_28" />
   <component name="FileEditorManager">
@@ -58,12 +57,12 @@
   <component name="GitRewordedCommitMessages">
     <option name="commitMessagesMapping">
       <RewordedCommitMessageMapping>
-        <option name="originalMessage" value="01" />
-        <option name="rewordedMessage" value="0.1.1" />
+        <option name="originalMessage" value="11" />
+        <option name="rewordedMessage" value="0.2.0" />
       </RewordedCommitMessageMapping>
     </option>
     <option name="currentCommit" value="1" />
-    <option name="onto" value="227aff5a7c2aa3d3887f7edc4b56334c4b82c4d0" />
+    <option name="onto" value="247f4ed1aab4118413f7d815f51f044cbe0957aa" />
   </component>
   <component name="ProjectId" id="1oPWGJKwwL1FAs6qqq6ncon5FBe" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -343,7 +342,35 @@
       <option name="project" value="LOCAL" />
       <updated>1614948430023</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="01">
+      <created>1615092087731</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1615092087731</updated>
+    </task>
+    <task id="LOCAL-00035" summary="02">
+      <created>1615095051646</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1615095051647</updated>
+    </task>
+    <task id="LOCAL-00036" summary="03">
+      <created>1619367044228</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1619367044228</updated>
+    </task>
+    <task id="LOCAL-00037" summary="04">
+      <created>1619367893961</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1619367893961</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -359,6 +386,17 @@
           <value>
             <State>
               <option name="SHOW_DETAILS_IN_CHANGES" value="false" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="develop" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
             </State>
           </value>
         </entry>
@@ -371,10 +409,6 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="0.1.2" />
-    <MESSAGE value="01" />
-    <MESSAGE value="02" />
-    <MESSAGE value="03" />
-    <MESSAGE value="04" />
     <MESSAGE value="05" />
     <MESSAGE value="06" />
     <MESSAGE value="07" />
@@ -393,6 +427,10 @@
     <MESSAGE value="20" />
     <MESSAGE value="21" />
     <MESSAGE value="22" />
-    <option name="LAST_COMMIT_MESSAGE" value="22" />
+    <MESSAGE value="01" />
+    <MESSAGE value="02" />
+    <MESSAGE value="03" />
+    <MESSAGE value="04" />
+    <option name="LAST_COMMIT_MESSAGE" value="04" />
   </component>
 </project>

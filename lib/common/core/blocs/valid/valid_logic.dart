@@ -123,7 +123,7 @@ class ValidLogic<S, V, F> {
   BlocListener listener(void Function(BuildContext, ValidState) listener,
       {bool Function(ValidState, ValidState) listenWhen, Widget child}) {
     return BlocListener<ValidBloc, ValidState>(
-      cubit: _validBloc,
+      bloc: _validBloc,
       listener: (BuildContext context, ValidState validState) {
         listener(context, validState);
       },
@@ -139,7 +139,7 @@ class ValidLogic<S, V, F> {
   BlocBuilder builder(Widget Function(BuildContext, ValidState) builder,
       {bool Function(ValidState, ValidState) buildWhen}) {
     return BlocBuilder<ValidBloc, ValidState>(
-      cubit: _validBloc,
+      bloc: _validBloc,
       builder: (BuildContext context, ValidState validState) {
         return builder(context, validState);
       },

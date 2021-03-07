@@ -90,7 +90,7 @@ class RadioLogic<S, V, F> {
   BlocListener listener(void Function(BuildContext, RadioState) listener,
       {bool Function(RadioState, RadioState) listenWhen, Widget child}) {
     return BlocListener<RadioBloc, RadioState>(
-      cubit: _radioBloc,
+      bloc: _radioBloc,
       listener: (BuildContext context, RadioState radioState) {
         listener(context, radioState);
       },
@@ -104,7 +104,7 @@ class RadioLogic<S, V, F> {
   BlocBuilder builder(Widget Function(BuildContext, RadioState) builder,
       {bool Function(RadioState, RadioState) buildWhen}) {
     return BlocBuilder<RadioBloc, RadioState>(
-      cubit: _radioBloc,
+      bloc: _radioBloc,
       builder: (BuildContext context, RadioState radioState) {
         return builder(context, radioState);
       },

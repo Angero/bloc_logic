@@ -1,4 +1,3 @@
-import 'package:bloc_logic/common/core/blocs/take/take_bloc.dart';
 import 'package:bloc_logic/common/core/blocs/take/take_logic.dart';
 import 'package:bloc_logic/common/view/message_container.dart';
 import 'package:bloc_logic/common/view/waiting_container.dart';

@@ -54,7 +54,7 @@ class _StoreExampleState extends State<StoreExample> {
 
   Widget _blocBuilder() {
     return BlocBuilder<StoreBloc, StoreState>(
-        cubit: _storeBloc,
+        bloc: _storeBloc,
         builder: (BuildContext context, StoreState storeState) {
           if (storeState is ReadedStoreState) {
             return Text(
