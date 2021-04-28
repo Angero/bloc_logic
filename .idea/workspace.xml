@@ -7,16 +7,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13012c05-f960-498b-94c0-9c631b4a094f" name="Default Changelist" comment="" />
+    <list default="true" id="13012c05-f960-498b-94c0-9c631b4a094f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="76729" />
+    <option name="totalTimeSeconds" value="79577" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_7_API_28" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3_API_28" />
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="bloc_logic.dart" pinned="false" current-in-tab="true">
@@ -57,12 +60,12 @@
   <component name="GitRewordedCommitMessages">
     <option name="commitMessagesMapping">
       <RewordedCommitMessageMapping>
-        <option name="originalMessage" value="11" />
-        <option name="rewordedMessage" value="0.2.0" />
+        <option name="originalMessage" value="01" />
+        <option name="rewordedMessage" value="0.3.0" />
       </RewordedCommitMessageMapping>
     </option>
     <option name="currentCommit" value="1" />
-    <option name="onto" value="247f4ed1aab4118413f7d815f51f044cbe0957aa" />
+    <option name="onto" value="7ea706d51262797185a0d8a679ece5cc08d7b5e5" />
   </component>
   <component name="ProjectId" id="1oPWGJKwwL1FAs6qqq6ncon5FBe" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -370,7 +373,35 @@
       <option name="project" value="LOCAL" />
       <updated>1619367893961</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="05">
+      <created>1619368394212</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1619368394212</updated>
+    </task>
+    <task id="LOCAL-00039" summary="06">
+      <created>1619607273727</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1619607273727</updated>
+    </task>
+    <task id="LOCAL-00040" summary="07">
+      <created>1619612095909</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1619612095909</updated>
+    </task>
+    <task id="LOCAL-00041" summary="08">
+      <created>1619615757353</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1619615757353</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -409,10 +440,6 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="0.1.2" />
-    <MESSAGE value="05" />
-    <MESSAGE value="06" />
-    <MESSAGE value="07" />
-    <MESSAGE value="08" />
     <MESSAGE value="09" />
     <MESSAGE value="10" />
     <MESSAGE value="11" />
@@ -431,6 +458,10 @@
     <MESSAGE value="02" />
     <MESSAGE value="03" />
     <MESSAGE value="04" />
-    <option name="LAST_COMMIT_MESSAGE" value="04" />
+    <MESSAGE value="05" />
+    <MESSAGE value="06" />
+    <MESSAGE value="07" />
+    <MESSAGE value="08" />
+    <option name="LAST_COMMIT_MESSAGE" value="08" />
   </component>
 </project>

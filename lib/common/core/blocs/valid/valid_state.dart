@@ -6,5 +6,5 @@ abstract class ValidState {}
 class ValidatedValidState extends ValidState {
   final Result result;
 
-  ValidatedValidState({@required this.result});
+  ValidatedValidState({required this.result});
 }

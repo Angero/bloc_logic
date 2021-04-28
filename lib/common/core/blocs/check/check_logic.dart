@@ -75,7 +75,7 @@ part 'check_event.dart';
 /// ```
 ///
 class CheckLogic<S, V, F> {
-  CheckBloc _checkBloc;
+  late CheckBloc _checkBloc;
 
   CheckLogic() {
     _checkBloc = CheckBloc();
@@ -94,28 +94,28 @@ class CheckLogic<S, V, F> {
   }
 
   BlocListener listener(void Function(BuildContext, CheckState) listener,
-      {bool Function(CheckState, CheckState) listenWhen, Widget child}) {
+      {bool Function(CheckState, CheckState)? listenWhen, required Widget child}) {
     return BlocListener<CheckBloc, CheckState>(
       bloc: _checkBloc,
       listener: (BuildContext context, CheckState checkState) {
         listener(context, checkState);
       },
       listenWhen: (CheckState beforeCheckState, CheckState afterCheckState) {
-        return listenWhen == null ? null : listenWhen(beforeCheckState, afterCheckState);
+        return listenWhen!(beforeCheckState, afterCheckState);
       },
       child: child,
     );
   }
 
   BlocBuilder builder(Widget Function(BuildContext, CheckState) builder,
-      {bool Function(CheckState, CheckState) buildWhen}) {
+      {bool Function(CheckState, CheckState)? buildWhen}) {
     return BlocBuilder<CheckBloc, CheckState>(
       bloc: _checkBloc,
       builder: (BuildContext context, CheckState checkState) {
         return builder(context, checkState);
       },
       buildWhen: (CheckState beforeCheckState, CheckState afterCheckState) {
-        return buildWhen == null ? null : buildWhen(beforeCheckState, afterCheckState);
+        return buildWhen!(beforeCheckState, afterCheckState);
       },
     );
   }

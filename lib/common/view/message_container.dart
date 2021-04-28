@@ -5,7 +5,7 @@ class MessageContainer extends StatelessWidget {
   final TextStyle style;
 
   const MessageContainer(
-      {Key key,
+      {Key? key,
       this.message = '',
       this.style = const TextStyle(
         fontSize: 12.0,

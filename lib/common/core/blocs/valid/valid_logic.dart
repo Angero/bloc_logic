@@ -98,13 +98,13 @@ part 'valid_event.dart';
 /// ```
 ///
 class ValidLogic<S, V, F> {
-  ValidBloc<S, V, F> _validBloc;
+  late ValidBloc<S, V, F> _validBloc;
 
   ValidBloc get validBloc => _validBloc;
 
   bool get validated => _validBloc is ValidatedValidState;
 
-  ValidLogic({@required IUseCase<S, V, F> usecase}) {
+  ValidLogic({required IUseCase<S, V, F> usecase}) {
     _validBloc = ValidBloc<S, V, F>(usecase: usecase);
   }
 
@@ -116,37 +116,33 @@ class ValidLogic<S, V, F> {
     _validBloc.add(InitialValidEvent());
   }
 
-  void validate([V value]) {
+  void validate([V? value]) {
     _validBloc.add(ValidateValidEvent(value));
   }
 
   BlocListener listener(void Function(BuildContext, ValidState) listener,
-      {bool Function(ValidState, ValidState) listenWhen, Widget child}) {
+      {bool Function(ValidState, ValidState)? listenWhen, required  Widget child}) {
     return BlocListener<ValidBloc, ValidState>(
       bloc: _validBloc,
       listener: (BuildContext context, ValidState validState) {
         listener(context, validState);
       },
       listenWhen: (ValidState beforeValidState, ValidState afterValidState) {
-        return listenWhen == null
-            ? null
-            : listenWhen(beforeValidState, afterValidState);
+        return listenWhen!(beforeValidState, afterValidState);
       },
       child: child,
     );
   }
 
   BlocBuilder builder(Widget Function(BuildContext, ValidState) builder,
-      {bool Function(ValidState, ValidState) buildWhen}) {
+      {bool Function(ValidState, ValidState)? buildWhen}) {
     return BlocBuilder<ValidBloc, ValidState>(
       bloc: _validBloc,
       builder: (BuildContext context, ValidState validState) {
         return builder(context, validState);
       },
       buildWhen: (ValidState beforeValidState, ValidState afterValidState) {
-        return buildWhen == null
-            ? null
-            : buildWhen(beforeValidState, afterValidState);
+        return buildWhen!(beforeValidState, afterValidState);
       },
     );
   }

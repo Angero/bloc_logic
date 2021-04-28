@@ -3,7 +3,7 @@ part of 'valid_logic.dart';
 class ValidBloc<S, V, F> extends Bloc<ValidEvent, ValidState> {
   final IUseCase<S, V, F> usecase;
 
-  ValidBloc({@required this.usecase})
+  ValidBloc({required this.usecase})
       : super(ValidatedValidState(result: Result(success: null)));
 
   @override

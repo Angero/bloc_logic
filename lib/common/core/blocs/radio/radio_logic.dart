@@ -73,7 +73,7 @@ part 'radio_event.dart';
 /// ```
 ///
 class RadioLogic<S, V, F> {
-  RadioBloc _radioBloc;
+  late RadioBloc _radioBloc;
 
   RadioLogic() {
     _radioBloc = RadioBloc<S, V, F>();
@@ -88,28 +88,28 @@ class RadioLogic<S, V, F> {
   }
 
   BlocListener listener(void Function(BuildContext, RadioState) listener,
-      {bool Function(RadioState, RadioState) listenWhen, Widget child}) {
+      {bool Function(RadioState, RadioState)? listenWhen, required Widget child}) {
     return BlocListener<RadioBloc, RadioState>(
       bloc: _radioBloc,
       listener: (BuildContext context, RadioState radioState) {
         listener(context, radioState);
       },
       listenWhen: (RadioState beforeRadioState, RadioState afterRadioState) {
-        return listenWhen == null ? null : listenWhen(beforeRadioState, afterRadioState);
+        return listenWhen!(beforeRadioState, afterRadioState);
       },
       child: child,
     );
   }
 
   BlocBuilder builder(Widget Function(BuildContext, RadioState) builder,
-      {bool Function(RadioState, RadioState) buildWhen}) {
+      {bool Function(RadioState, RadioState)? buildWhen}) {
     return BlocBuilder<RadioBloc, RadioState>(
       bloc: _radioBloc,
       builder: (BuildContext context, RadioState radioState) {
         return builder(context, radioState);
       },
       buildWhen: (RadioState beforeRadioState, RadioState afterRadioState) {
-        return buildWhen == null ? null : buildWhen(beforeRadioState, afterRadioState);
+        return buildWhen!(beforeRadioState, afterRadioState);
       },
     );
   }

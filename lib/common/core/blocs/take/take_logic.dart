@@ -37,7 +37,7 @@ part 'take_state.dart';
 /// class TakeUseCase implements IFutureUseCase<List<String>, void, String> {
 ///   final ITakeRepository repository;
 ///
-///   TakeUseCase({@required this.repository});
+///   TakeUseCase({required this.repository});
 ///
 ///   @override
 ///   Future<Result<List<String>, String>> execute([void value]) async {
@@ -132,9 +132,9 @@ part 'take_state.dart';
 /// ```
 ///
 class TakeLogic<S, V, F> {
-  TakeBloc<S, V, F> _takeBloc;
+  late TakeBloc<S, V, F> _takeBloc;
 
-  TakeLogic({@required IFutureUseCase<S, V, F> usecase}) {
+  TakeLogic({required IFutureUseCase<S, V, F> usecase}) {
     _takeBloc = TakeBloc<S, V, F>(usecase: usecase);
   }
 
@@ -142,37 +142,33 @@ class TakeLogic<S, V, F> {
     _takeBloc.close();
   }
 
-  void request([V value]) {
+  void request([V? value]) {
     _takeBloc.add(SendTakeEvent(value));
   }
 
   BlocListener listener(void Function(BuildContext, TakeState) listener,
-      {bool Function(TakeState, TakeState) listenWhen, Widget child}) {
+      {bool Function(TakeState, TakeState)? listenWhen, required  Widget child}) {
     return BlocListener<TakeBloc, TakeState>(
       bloc: _takeBloc,
       listener: (BuildContext context, TakeState takeState) {
         listener(context, takeState);
       },
       listenWhen: (TakeState beforeTakeState, TakeState afterTakeState) {
-        return listenWhen == null
-            ? null
-            : listenWhen(beforeTakeState, afterTakeState);
+        return listenWhen!(beforeTakeState, afterTakeState);
       },
       child: child,
     );
   }
 
   BlocBuilder builder(Widget Function(BuildContext, TakeState) builder,
-      {bool Function(TakeState, TakeState) buildWhen}) {
+      {bool Function(TakeState, TakeState)? buildWhen}) {
     return BlocBuilder<TakeBloc, TakeState>(
       bloc: _takeBloc,
       builder: (BuildContext context, TakeState takeState) {
         return builder(context, takeState);
       },
       buildWhen: (TakeState beforeTakeState, TakeState afterTakeState) {
-        return buildWhen == null
-            ? null
-            : buildWhen(beforeTakeState, afterTakeState);
+        return buildWhen!(beforeTakeState, afterTakeState);
       },
     );
   }

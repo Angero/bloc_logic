@@ -1,3 +1,7 @@
+## 0.4.0
+
+Null Safety Completely
+
 ## 0.3.0
 
 Null Safety

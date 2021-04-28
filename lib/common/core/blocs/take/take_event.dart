@@ -4,7 +4,7 @@ part of 'take_logic.dart';
 abstract class TakeEvent {}
 
 class SendTakeEvent<V> extends TakeEvent {
-  final V value;
+  final V? value;
 
   SendTakeEvent([this.value]);
 }

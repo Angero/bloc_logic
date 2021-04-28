@@ -1,6 +1,6 @@
 class Data {
 
-  Map<String, dynamic> _map;
+  late Map<String, dynamic> _map;
 
   Data() {
     _map = Map();
