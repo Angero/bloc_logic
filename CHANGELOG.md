@@ -1,3 +1,7 @@
+## 0.4.2
+
+Failure class was added.
+
 ## 0.4.1
 
 FIx Use Case results.
