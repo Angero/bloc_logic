@@ -1,3 +1,7 @@
+## 0.4.5
+
+Add failure declaration.
+
 ## 0.4.4
 
 Update documentation.

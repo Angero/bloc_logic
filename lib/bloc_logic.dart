@@ -10,6 +10,7 @@ export 'package:bloc_logic/common/core/blocs/take/take_logic.dart';
 export 'package:bloc_logic/common/core/blocs/valid/valid_logic.dart';
 export 'package:bloc_logic/common/core/usecases/use_case_interface.dart';
 export 'package:bloc_logic/common/data/result.dart';
+export 'package:bloc_logic/common/data/failure.dart';
 export 'package:bloc_logic/common/view/message_container.dart';
 export 'package:bloc_logic/common/view/waiting_container.dart';
 export 'package:flutter/material.dart';
