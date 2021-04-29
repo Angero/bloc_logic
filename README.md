@@ -75,6 +75,8 @@ for you below:
 
 ## Check Logic
 
+![check_logic_parts](https://user-images.githubusercontent.com/9856286/116503358-47216680-a8cf-11eb-97b3-aaa82f1a9e70.jpg)
+
 It is the very simple logic. This pattern does only turning on or off some switcher. For example we can see it when use
 Checkbox widget. It can seem that it is unnecessary action. But it's not right. In the future you can use this logic
 together with many different logics for building stonge app architecture.
@@ -125,6 +127,10 @@ _checkLogic.builder(
 ```
 
 ## Radio Logic
+
+
+![radio](https://user-images.githubusercontent.com/9856286/116503390-602a1780-a8cf-11eb-806c-aa8554fcafda.jpg)
+
 
 The next simple pattern is RadioLogic. You can build and control radio buttons with it for example. If you want to add
 tabs in your app RadioLogic is the best way for it.

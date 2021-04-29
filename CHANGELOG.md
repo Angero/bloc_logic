@@ -1,3 +1,7 @@
+## 0.4.4
+
+Update documentation.
+
 ## 0.4.3
 
 Library Bloc Logic.
