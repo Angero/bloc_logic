@@ -1,9 +1,10 @@
 import 'package:bloc_logic/bloc_logic.dart';
 
 part 'valid_bloc.dart';
-part 'valid_state.dart';
 
 part 'valid_event.dart';
+
+part 'valid_state.dart';
 
 /// **1. DEFINE LOGIC**
 /// ```dart
@@ -119,14 +120,17 @@ class ValidLogic<S, V, F> {
   }
 
   BlocListener listener(void Function(BuildContext, ValidState) listener,
-      {bool Function(ValidState, ValidState)? listenWhen, required  Widget child}) {
+      {bool Function(ValidState, ValidState)? listenWhen,
+      required Widget child}) {
     return BlocListener<ValidBloc, ValidState>(
       bloc: _validBloc,
       listener: (BuildContext context, ValidState validState) {
         listener(context, validState);
       },
       listenWhen: (ValidState beforeValidState, ValidState afterValidState) {
-        return listenWhen!(beforeValidState, afterValidState);
+        return listenWhen == null
+            ? true
+            : listenWhen(beforeValidState, afterValidState);
       },
       child: child,
     );
@@ -140,7 +144,9 @@ class ValidLogic<S, V, F> {
         return builder(context, validState);
       },
       buildWhen: (ValidState beforeValidState, ValidState afterValidState) {
-        return buildWhen!(beforeValidState, afterValidState);
+        return buildWhen == null
+            ? true
+            : buildWhen(beforeValidState, afterValidState);
       },
     );
   }

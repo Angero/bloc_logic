@@ -100,7 +100,7 @@ class CheckLogic<S, V, F> {
         listener(context, checkState);
       },
       listenWhen: (CheckState beforeCheckState, CheckState afterCheckState) {
-        return listenWhen!(beforeCheckState, afterCheckState);
+        return listenWhen == null ? true :  listenWhen(beforeCheckState, afterCheckState);
       },
       child: child,
     );
@@ -114,7 +114,7 @@ class CheckLogic<S, V, F> {
         return builder(context, checkState);
       },
       buildWhen: (CheckState beforeCheckState, CheckState afterCheckState) {
-        return buildWhen!(beforeCheckState, afterCheckState);
+        return buildWhen == null ? true :  buildWhen(beforeCheckState, afterCheckState);
       },
     );
   }

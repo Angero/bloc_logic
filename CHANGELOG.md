@@ -1,3 +1,7 @@
+## 0.4.7
+
+BuildWhen and ListenWhen was corrected.
+
 ## 0.4.6
 
 Use case value for null safety.

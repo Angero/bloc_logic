@@ -94,7 +94,7 @@ class RadioLogic<S, V, F> {
         listener(context, radioState);
       },
       listenWhen: (RadioState beforeRadioState, RadioState afterRadioState) {
-        return listenWhen!(beforeRadioState, afterRadioState);
+        return listenWhen == null ? true : listenWhen(beforeRadioState, afterRadioState);
       },
       child: child,
     );
@@ -108,7 +108,7 @@ class RadioLogic<S, V, F> {
         return builder(context, radioState);
       },
       buildWhen: (RadioState beforeRadioState, RadioState afterRadioState) {
-        return buildWhen!(beforeRadioState, afterRadioState);
+        return buildWhen == null ? true : buildWhen(beforeRadioState, afterRadioState);
       },
     );
   }

@@ -141,14 +141,17 @@ class TakeLogic<S, V, F> {
   }
 
   BlocListener listener(void Function(BuildContext, TakeState) listener,
-      {bool Function(TakeState, TakeState)? listenWhen, required  Widget child}) {
+      {bool Function(TakeState, TakeState)? listenWhen,
+      required Widget child}) {
     return BlocListener<TakeBloc, TakeState>(
       bloc: _takeBloc,
       listener: (BuildContext context, TakeState takeState) {
         listener(context, takeState);
       },
       listenWhen: (TakeState beforeTakeState, TakeState afterTakeState) {
-        return listenWhen!(beforeTakeState, afterTakeState);
+        return listenWhen == null
+            ? true
+            : listenWhen(beforeTakeState, afterTakeState);
       },
       child: child,
     );
@@ -162,7 +165,9 @@ class TakeLogic<S, V, F> {
         return builder(context, takeState);
       },
       buildWhen: (TakeState beforeTakeState, TakeState afterTakeState) {
-        return buildWhen!(beforeTakeState, afterTakeState);
+        return buildWhen == null
+            ? true
+            : buildWhen(beforeTakeState, afterTakeState);
       },
     );
   }
