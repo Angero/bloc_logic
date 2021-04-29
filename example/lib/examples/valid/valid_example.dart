@@ -1,7 +1,5 @@
-import 'package:bloc_logic/common/core/blocs/valid/valid_logic.dart';
-import 'package:bloc_logic/common/data/result.dart';
+import 'package:bloc_logic/bloc_logic.dart';
 import 'package:bloc_logic_example/examples/valid/valid_use_case.dart';
-import 'package:flutter/material.dart';
 
 class ValidExample extends StatefulWidget {
   static const String route = '/valid_example';

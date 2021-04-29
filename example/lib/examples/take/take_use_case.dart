@@ -1,7 +1,5 @@
-import 'package:bloc_logic/common/core/usecases/use_case_interface.dart';
-import 'package:bloc_logic/common/data/result.dart';
+import 'package:bloc_logic/bloc_logic.dart';
 import 'package:bloc_logic_example/examples/take/take_repository_interface.dart';
-import 'package:flutter/foundation.dart';
 
 class TakeUseCase implements IFutureUseCase<List<String>, void, String> {
   final ITakeRepository repository;

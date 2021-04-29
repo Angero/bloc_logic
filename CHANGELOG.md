@@ -1,3 +1,7 @@
+## 0.4.3
+
+Library Bloc Logic.
+
 ## 0.4.2
 
 Failure class was added.

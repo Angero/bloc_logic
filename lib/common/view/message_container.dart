@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:bloc_logic/bloc_logic.dart';
 
 class MessageContainer extends StatelessWidget {
   final String message;

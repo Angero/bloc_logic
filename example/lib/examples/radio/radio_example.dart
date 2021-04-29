@@ -1,5 +1,4 @@
-import 'package:bloc_logic/common/core/blocs/radio/radio_logic.dart';
-import 'package:flutter/material.dart';
+import 'package:bloc_logic/bloc_logic.dart';
 
 class RadioExample extends StatefulWidget {
   static const String route = '/radio_example';

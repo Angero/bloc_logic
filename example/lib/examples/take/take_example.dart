@@ -1,9 +1,6 @@
-import 'package:bloc_logic/common/core/blocs/take/take_logic.dart';
-import 'package:bloc_logic/common/view/message_container.dart';
-import 'package:bloc_logic/common/view/waiting_container.dart';
+import 'package:bloc_logic/bloc_logic.dart';
 import 'package:bloc_logic_example/examples/take/take_repository.dart';
 import 'package:bloc_logic_example/examples/take/take_use_case.dart';
-import 'package:flutter/material.dart';
 
 class TakeExample extends StatefulWidget {
   static const String route = '/take_example';

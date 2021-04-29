@@ -1,5 +1,4 @@
-import 'package:bloc_logic/common/core/usecases/use_case_interface.dart';
-import 'package:bloc_logic/common/data/result.dart';
+import 'package:bloc_logic/bloc_logic.dart';
 
 class ValidUseCase implements IUseCase<String, String, String> {
   @override

@@ -1,4 +1,4 @@
-import 'package:bloc_logic/common/data/result.dart';
+import 'package:bloc_logic/bloc_logic.dart';
 
 abstract class IUseCase<S, V, F> {
   Result<S?, F?> execute([V value]);

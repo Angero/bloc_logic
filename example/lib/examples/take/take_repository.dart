@@ -1,4 +1,3 @@
-
 import 'package:bloc_logic_example/examples/take/take_repository_interface.dart';
 
 class TakeRepository implements ITakeRepository {

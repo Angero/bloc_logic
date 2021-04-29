@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:bloc_logic/bloc_logic.dart';
 
 part 'check_bloc.dart';
 part 'check_state.dart';

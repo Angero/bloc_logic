@@ -1,5 +1,4 @@
-import 'package:bloc_logic/common/core/blocs/check/check_logic.dart';
-import 'package:flutter/material.dart';
+import 'package:bloc_logic/bloc_logic.dart';
 
 class CheckExample extends StatefulWidget {
   static const String route = '/check_example';

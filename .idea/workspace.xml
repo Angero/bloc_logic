@@ -8,10 +8,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13012c05-f960-498b-94c0-9c631b4a094f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/common/data/failure.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/examples/check/check_example.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/examples/check/check_example.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/examples/radio/radio_example.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/examples/radio/radio_example.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/examples/take/take_example.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/examples/take/take_example.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bloc_logic.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bloc_logic.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/core/blocs/check/check_logic.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/core/blocs/check/check_logic.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/core/blocs/radio/radio_logic.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/core/blocs/radio/radio_logic.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/core/blocs/take/take_logic.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/core/blocs/take/take_logic.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/core/blocs/valid/valid_logic.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/core/blocs/valid/valid_logic.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/core/usecases/use_case_interface.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/core/usecases/use_case_interface.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/view/message_container.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/view/message_container.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/view/waiting_container.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/view/waiting_container.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +28,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="80570" />
+    <option name="totalTimeSeconds" value="81847" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3_API_28" />
   <component name="FileEditorManager">
@@ -424,7 +433,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619667387826</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="0.4.2">
+      <created>1619668909355</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1619668909355</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -486,6 +502,7 @@
     <MESSAGE value="09" />
     <MESSAGE value="10" />
     <MESSAGE value="0.4.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.4.1" />
+    <MESSAGE value="0.4.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.4.2" />
   </component>
 </project>

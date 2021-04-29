@@ -1,10 +1,8 @@
-import 'package:bloc_logic/common/core/usecases/use_case_interface.dart';
-import 'package:bloc_logic/common/data/result.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:bloc_logic/bloc_logic.dart';
 
 part 'valid_bloc.dart';
 part 'valid_state.dart';
+
 part 'valid_event.dart';
 
 /// **1. DEFINE LOGIC**
