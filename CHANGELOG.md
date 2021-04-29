@@ -1,3 +1,7 @@
+## 0.4.6
+
+Use case value for null safety.
+
 ## 0.4.5
 
 Add failure declaration.
