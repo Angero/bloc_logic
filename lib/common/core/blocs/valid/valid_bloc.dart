@@ -12,7 +12,7 @@ class ValidBloc<S, V, F> extends Bloc<ValidEvent, ValidState> {
       if (event.value == null)
         yield ValidatedValidState(result: Result(success: null));
       else {
-        Result<S, F> result = this.usecase.execute(event.value);
+        Result<S?, F?> result = this.usecase.execute(event.value);
         yield ValidatedValidState(result: result);
       }
     } else if (event is InitialValidEvent) {

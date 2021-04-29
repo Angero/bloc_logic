@@ -1,3 +1,7 @@
+## 0.4.1
+
+FIx Use Case results.
+
 ## 0.4.0
 
 Null Safety Completely

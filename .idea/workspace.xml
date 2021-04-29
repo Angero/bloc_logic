@@ -9,7 +9,6 @@
   <component name="ChangeListManager">
     <list default="true" id="13012c05-f960-498b-94c0-9c631b4a094f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="79577" />
+    <option name="totalTimeSeconds" value="79870" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3_API_28" />
   <component name="FileEditorManager">
@@ -60,12 +59,12 @@
   <component name="GitRewordedCommitMessages">
     <option name="commitMessagesMapping">
       <RewordedCommitMessageMapping>
-        <option name="originalMessage" value="01" />
-        <option name="rewordedMessage" value="0.3.0" />
+        <option name="originalMessage" value="06" />
+        <option name="rewordedMessage" value="0.4.0" />
       </RewordedCommitMessageMapping>
     </option>
     <option name="currentCommit" value="1" />
-    <option name="onto" value="7ea706d51262797185a0d8a679ece5cc08d7b5e5" />
+    <option name="onto" value="3caf94f7b217e7267435a276fdfe6da9fe371ac4" />
   </component>
   <component name="ProjectId" id="1oPWGJKwwL1FAs6qqq6ncon5FBe" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -401,7 +400,21 @@
       <option name="project" value="LOCAL" />
       <updated>1619615757353</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="09">
+      <created>1619617210335</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1619617210335</updated>
+    </task>
+    <task id="LOCAL-00043" summary="10">
+      <created>1619617288796</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1619617288796</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -422,7 +435,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="develop" />
+                        <option value="origin/develop" />
                       </list>
                     </value>
                   </entry>
@@ -440,8 +453,6 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="0.1.2" />
-    <MESSAGE value="09" />
-    <MESSAGE value="10" />
     <MESSAGE value="11" />
     <MESSAGE value="12" />
     <MESSAGE value="13" />
@@ -462,6 +473,8 @@
     <MESSAGE value="06" />
     <MESSAGE value="07" />
     <MESSAGE value="08" />
-    <option name="LAST_COMMIT_MESSAGE" value="08" />
+    <MESSAGE value="09" />
+    <MESSAGE value="10" />
+    <option name="LAST_COMMIT_MESSAGE" value="10" />
   </component>
 </project>

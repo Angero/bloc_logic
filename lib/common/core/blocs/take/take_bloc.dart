@@ -11,7 +11,7 @@ class TakeBloc<S, V, F> extends Bloc<TakeEvent, TakeState> {
     if (event is SendTakeEvent) {
       yield WaitingTakeState();
       try {
-        Result<S, F> result = await usecase.execute(event.value);
+        Result<S?, F?> result = await usecase.execute(event.value);
         if (!result.hasFailure())
           yield SuccessTakeState<S>(result.success!);
         else
