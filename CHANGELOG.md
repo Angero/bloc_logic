@@ -1,3 +1,7 @@
+## 0.4.8
+
+Some methods for Failure
+
 ## 0.4.7
 
 BuildWhen and ListenWhen was corrected.
