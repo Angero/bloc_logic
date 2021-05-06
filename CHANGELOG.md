@@ -1,3 +1,7 @@
+## 0.4.9
+
+Set optional child for listener
+
 ## 0.4.8
 
 Some methods for Failure

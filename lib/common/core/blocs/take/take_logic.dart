@@ -141,8 +141,7 @@ class TakeLogic<S, V, F> {
   }
 
   BlocListener listener(void Function(BuildContext, TakeState) listener,
-      {bool Function(TakeState, TakeState)? listenWhen,
-      required Widget child}) {
+      {bool Function(TakeState, TakeState)? listenWhen, Widget? child}) {
     return BlocListener<TakeBloc, TakeState>(
       bloc: _takeBloc,
       listener: (BuildContext context, TakeState takeState) {
