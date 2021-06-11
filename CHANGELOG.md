@@ -1,3 +1,8 @@
+## 0.4.10
+
+Add method init to TakeLogic. This method allows to set 
+Initial State.
+
 ## 0.4.9
 
 Set optional child for listener

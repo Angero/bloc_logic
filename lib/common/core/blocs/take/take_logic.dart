@@ -16,7 +16,7 @@ part 'take_state.dart';
 /// **2. INITIALIZE LOGIC**
 ///
 /// ```dart
-/// _takeLogic = TakeLogic<List<String>, void, String>(
+/// _takeLogic = TakeLogic <List<String>, void, String>(
 ///     usecase: TakeUseCase(repository: TakeRepository()));
 /// ```
 ///
@@ -117,12 +117,14 @@ part 'take_state.dart';
 ///
 /// **8. EVENTS**
 ///
-/// * request()
+/// * request(value)
+/// * init()
 ///
 /// Example:
 ///
 /// ```dart
 /// _takeLogic.request([V]);
+/// _takeLogic.init();
 /// ```
 ///
 class TakeLogic<S, V, F> {
@@ -138,6 +140,10 @@ class TakeLogic<S, V, F> {
 
   void request([V? value]) {
     _takeBloc.add(SendTakeEvent(value));
+  }
+
+  void init() {
+    _takeBloc.add(InitiateTakeEvent());
   }
 
   BlocListener listener(void Function(BuildContext, TakeState) listener,
