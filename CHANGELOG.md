@@ -1,6 +1,10 @@
+## 0.4.12
+
+Remove snippets. Found out bug with char < in the documentation.
+
 ## 0.4.11
 
-Create snippets
+Create snippets.
 
 ## 0.4.10
 

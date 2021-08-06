@@ -8,44 +8,38 @@ part 'take_event.dart';
 
 part 'take_state.dart';
 
-/// {@tool snippet}
-///
+
 /// **1. DEFINE LOGIC**
 ///
 /// ```dart
 /// TakeLogic _takeLogic;
 /// ```
-/// {@end-tool}
-/// {@tool snippet}
 ///
 /// **2. INITIALIZE LOGIC**
 ///
 /// ```dart
-/// _takeLogic = TakeLogic <List<String>, void, String>(
+/// _takeLogic = TakeLogic {List{String>, void, String>(
 ///     usecase: TakeUseCase(repository: TakeRepository()));
 /// ```
-/// {@end-tool}
-/// {@tool snippet}
 ///
 /// **3. DISPOSE**
+///
 /// ```dart
 /// _takeLogic.dispose();
 /// ```
-/// {@end-tool}
-/// {@tool snippet}
 ///
 /// **4. USE CASE**
 ///
 /// ```dart
-/// class TakeUseCase implements IFutureUseCase<List<String>, void, String> {
+/// class TakeUseCase implements IFutureUseCase{List{String>, void, String> {
 ///   final ITakeRepository repository;
 ///
 ///   TakeUseCase({required this.repository});
 ///
 ///   @override
-///   Future<Result<List<String>, String>> execute([void value]) async {
+///   Future{Result{List{String>, String>> execute([void value]) async {
 ///     try {
-///       List<String> result = await repository.getList();
+///       List{String> result = await repository.getList();
 ///       return Result(success: result);
 ///     } catch (e) {
 ///       return Result(failure: e.toString());
@@ -53,15 +47,13 @@ part 'take_state.dart';
 ///   }
 /// }
 /// ```
-/// {@end-tool}
-/// {@tool snippet}
 ///
 /// **5. REPOSITORY**
 ///
 /// ```dart
 /// class TakeRepository implements ITakeRepository {
 ///   @override
-///   Future<List<String>> getList() async {
+///   Future{List{String>> getList() async {
 ///     await Future.delayed(Duration(milliseconds: 1000));
 ///     return ['Onion', 'Potato', 'Carrot'];
 ///   }
@@ -70,11 +62,9 @@ part 'take_state.dart';
 ///
 /// ```dart
 /// abstract class ITakeRepository {
-///   Future<List<String>> getList();
+///   Future{List{String>> getList();
 /// }
 /// ```
-/// {@end-tool}
-/// {@tool snippet}
 ///
 /// **6. LISTENER**
 ///
@@ -102,8 +92,6 @@ part 'take_state.dart';
 ///   child: Container(),
 /// )
 /// ```
-/// {@end-tool}
-/// {@tool snippet}
 ///
 /// **7. BUILDER**
 ///
@@ -129,8 +117,6 @@ part 'take_state.dart';
 ///   return MessageContainer(message: 'Oops');
 /// })
 ///```
-/// {@end-tool}
-/// {@tool snippet}
 ///
 /// **8. EVENTS**
 ///
@@ -143,7 +129,7 @@ part 'take_state.dart';
 /// _takeLogic.request([V]);
 /// _takeLogic.init();
 /// ```
-/// {@end-tool}
+
 class TakeLogic<S, V, F> {
   late TakeBloc<S, V, F> _takeBloc;
 
