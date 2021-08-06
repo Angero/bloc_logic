@@ -1,3 +1,7 @@
+## 0.4.11
+
+Create snippets
+
 ## 0.4.10
 
 Add method init to TakeLogic. This method allows to set 
